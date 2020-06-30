@@ -1,27 +1,28 @@
+from bankAccount import BankAccount
+
+
 class User:
   def __init__(self, name, email):
     self.name = name
     self.email = email
-    self.account_balance = 0
+    self.account = BankAccount(2, 0)
 
   def make_deposit(self, amount):
-    if (amount <= 0):
-      print('Amount can not be less than 0.')
-    else:
-      self.account_balance += amount
+    try:
+      self.account.deposit(amount)
+    except ValueError as error:
+      print(error)
     return self
 
   def make_withdrawl(self, amount):
-    if (amount <= 0):
-      print('Amount can not be less than 0.')
-    elif (amount > self.account_balance):
-      print('Insufficient funds for withdrawl.')
-    else:
-      self.account_balance -= amount
+    try:
+      self.account.withdraw(amount)
+    except ValueError as error:
+      print(error)
     return self
 
   def display_balance(self):
-    print(f'User: {self.name}, Balance: ${self.account_balance}')
+    print(f'User: {self.name}, Balance: ${self.account.balance}')
     return self
 
   def transfer_money(self, other_user, amount):
