@@ -48,23 +48,27 @@ class User:
     other_user.make_deposit(amount)
     return self
 
-justin = User('Justin', 'justin@email.com')
-justin.make_deposit(200).make_deposit(400).make_deposit(100).make_withdrawal(300).display_balance()
+def main():
+  justin = User('Justin', 'justin@email.com')
+  justin.make_deposit(200).make_deposit(400).make_deposit(100).make_withdrawal(300).display_balance()
 
-lili = User('Lili', 'lili@email.com')
-lili.make_deposit(500).make_deposit(200).make_withdrawal(200).make_withdrawal(200).display_balance()
+  lili = User('Lili', 'lili@email.com')
+  lili.make_deposit(500).make_deposit(200).make_withdrawal(200).make_withdrawal(200).display_balance()
 
-other = User('Other', 'other@email.com')
-other.make_deposit(500).make_withdrawal(200).make_withdrawal(200).make_withdrawal(200).display_balance()
+  other = User('Other', 'other@email.com')
+  other.make_deposit(500).make_withdrawal(200).make_withdrawal(200).make_withdrawal(200).display_balance()
 
-justin.transfer_money(lili, 100)
-justin.display_balance()
-lili.display_balance()
+  justin.transfer_money(lili, 100)
+  justin.display_balance()
+  lili.display_balance()
 
-justin.add_account(5, 200)
-justin.display_balance(1)
-justin.make_withdrawal(100, 1)
-justin.make_deposit(500, 1)
-justin.display_balance(1)
-justin.display_balance(2)
-justin.make_withdrawal(100, 2)
+  justin.add_account(5, 200)
+  justin.display_balance(1)
+  justin.make_withdrawal(100, 1)
+  justin.make_deposit(500, 1)
+  justin.display_balance(1)
+  justin.display_balance(2)
+  justin.make_withdrawal(100, 2)
+
+if (__name__ == '__main__'):
+  main()
