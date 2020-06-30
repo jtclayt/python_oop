@@ -63,5 +63,8 @@ lili.display_balance()
 
 justin.add_account(5, 200)
 justin.display_balance(1)
+justin.make_withdrawal(100, 1)
+justin.make_deposit(500, 1)
+justin.display_balance(1)
 justin.display_balance(2)
 justin.make_withdrawal(100, 2)
