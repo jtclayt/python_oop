@@ -37,8 +37,8 @@ class TestMathDojo(unittest.TestCase):
     self.assertEqual(self.md.result, -2)
 
   def testSubtractMultiple(self):
-    self.md.subtract(2,10,3,1)
-    self.assertEqual(self.md.result, -16)
+    self.md.subtract(2,10)
+    self.assertEqual(self.md.result, -12)
 
   def testChaining(self):
     self.md.add(1,3,5,7).subtract(2,4,6)
